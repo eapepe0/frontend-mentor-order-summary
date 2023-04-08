@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display");
+
+:root {
+    --pale_blue: hsl(225, 100%, 94%) ;
+    --bright_blue: hsl(245, 75%, 52%) ;
+    --very_pale_blue: hsl(225, 100%, 98%) ;
+    --desaturated_blue: hsl(224, 23%, 55%) ;
+    --dark_blue: hsl(223, 47%, 23%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Red Hat Display",serif;
+    font-size: 16px;
+    min-height: 100vh;
+    background-image: url(../img/pattern-background-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: var(--pale_blue);
+    position: relative;
+}
+.container{
+    /* border: 1px solid red; */
+    position: absolute; /* puedo mover el contenedor donde quiera */
+    left: 50%; /* al medio*/
+    top: 50%;
+    transform: translate(-50%,-50%); /* me aseguro que quede en el medio */
+    max-width: 450px; /* al contenedor le damos un maximo de ancho */
+    background: white; /* pintamos de blanco */
+    border-radius: 20px; /* le damos un radio al borde */
+    overflow: hidden; /* el border radius en la imagen no funciona sino */
+    /*border: 5px solid red; */
+}
+
+.text-content{
+    padding: 7%;
+    text-align: center;
+    /*border: 4px dotted orange; */
+}
+.title{
+    color: var(--dark_blue);
+    font-size: 32px;
+    margin-bottom: 20px;
+    /*border: 1px solid green;*/
+}
+
+.text-content p.subtitle{
+    color: #8a8a8a;
+    margin-bottom: 25px;
+    /*border: 2px solid violet;*/
+
+}
+
+.plan-box{
+    background-color: var(--very_pale_blue);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+
+    /*border: 2px solid darkred;*/
+}
+
+.plan-box-left{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    /*border: 1px solid salmon;*/
+}
+
+.plan-box-left div{
+    margin-left: 20px; /* separa el icono de la musica con el texto Annual Plan */
+    /*border: 2px double red;*/
+}
+
+.plan-box-left div h5{
+    font-weight: 900;
+    font-size: 15px;
+    color: var(--dark_blue);
+    /*border: 2px solid cyan;*/
+
+}
+
+.plan-box-left div p{
+    font-size: 14px;
+    color: #8a8a8a;
+    /*border: 2px solid orange;*/
+}
+
+.plan-box a{
+    font-weight: 900;
+    color: var(--bright_blue);
+    transition: color .3s ease;
+    /*border: 2px solid slateblue;*/
+}
+
+.plan-box a:hover{
+    text-decoration: none;
+    color: var(--bright-blue);
+}
+.proceed-btn{
+    display: block; /* se pone el display block para que quede uno arriba del otro */
+    text-decoration: none; /* le saca el subrayado a ser un link */
+    color: white; /* blanco el color */
+    font-weight: 900; /* bold */
+    background-color: var(--bright_blue);
+    padding: 20px 0; /* padding para dibujar el boton lo azul */
+    border-radius: 12px; /* un radio para que quede redondeado */
+    margin: 30px 0; /* para que no quede pegado con el otro boton */
+    /*border: 4px solid green;*/
+}
+
+.proceed-btn:hover{
+    background-color: var(--desaturated_blue);
+    transition: background-color .3s ease;
+}
+
+
+.cancel-btn{
+    color: var(--desaturated_blue);
+    text-decoration: none;
+    font-weight: 900 ;
+    transition: color .3s ease;
+    /*border: 4px solid blueviolet;*/
+}
+
+.cancel-btn:hover{
+    color: var(--dark_blue);
+
+}
+
+@media only screen and (max-width:425px) {
+    body{
+        background-image: url(../img/pattern-background-mobile.svg);
+        font-size: 14px;
+    }
+    .container{
+        max-width: 85%;    /* ocupa el 85% del body */
+    }  
+    .title{
+        font-size: 23px;
+    }
+    div .plan-box{
+        padding: 12px;
+    }
+
+    .plan-box-left div{
+        margin-left: 10px;
+    }
+
+    .proceed-btn ,
+    .cancel-btn ,
+    .plan-box a{ 
+        font-size: 13px;
+    }
+    .text-content{
+        padding: 9% 7%;
+    }
+}
